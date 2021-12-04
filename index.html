@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle</title>
+
+    <!-- ===== =====>> Custom Css Link <<===== ===== -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="box">
+        <input class="toggle" id="toggleBtn" type="checkbox">
+    </div>
+
+</body>
+<script>
+    const body = document.querySelector('body'),
+        toggleBtn = document.getElementById('toggleBtn'),
+        text = document.querySelectorAll('.text');
+    var i;
+
+    toggleBtn.addEventListener('click', () => {
+        body.classList.toggle('active');
+        toggleBtn.classList.toggle('active');
+        for (i = 0; i < text.length; i++) {
+            text[i].classList.toggle('darkMode');
+        }
+    });
+</script>
+</html>
